@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:structural_slab_validator/theme/app_colors.dart';
 import 'package:structural_slab_validator/widgets/input_widget.dart';
 import 'package:structural_slab_validator/widgets/validator_button.dart';
 
 class SSVScreen extends StatelessWidget {
-
-  SSVScreen({super.key});
+  const SSVScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 175, 210, 255),
+        backgroundColor: AppColors.primaryDark,
         title: const Text("Structural Slab Validator"),
         centerTitle: true,
       ),
@@ -34,8 +35,12 @@ class SSVScreen extends StatelessWidget {
                     child: textFields[index],
                   ),
                 ),
-                const SizedBox(height: 20),
-                ValidatorButton(),
+                SizedBox(
+                  width: constraints.maxWidth * 0.8,
+                  child: Consumer(builder: (context, ref, child) {
+                    return ValidatorButton();
+                  }),
+                ),
               ],
             ),
           );
