@@ -28,6 +28,6 @@ class InputController extends StateNotifier<InputData> {
   }
 }
 
-final  inputProvider = StateNotifierProvider<InputController, InputData>((ref) {
+final inputProvider = StateNotifierProvider<InputController, InputData>((ref) {
   return InputController();
 });
