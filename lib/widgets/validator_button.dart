@@ -4,7 +4,7 @@ import 'package:structural_slab_validator/providers/input_controller.dart';
 import 'package:structural_slab_validator/theme/app_colors.dart';
 import 'package:structural_slab_validator/widgets/input_widget.dart';
 
-Widget ValidatorButton() {
+Widget validatorButton() {
   return Consumer(builder: (context, ref, child) {
     final inputState = ref.read(inputProvider.notifier);
     return ElevatedButton(

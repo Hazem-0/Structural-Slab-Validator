@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:structural_slab_validator/theme/app_colors.dart';
 
-Widget InputWidget(TextEditingController controller, String hint) {
+Widget inputWidget(TextEditingController controller, String hint) {
   return TextField(
     controller: controller,
     decoration: InputDecoration(
@@ -41,5 +41,5 @@ final List<TextEditingController> controllers =
     List.generate(8, (_) => TextEditingController());
 
 final List<Widget> textFields = List.generate(8, (index) {
-  return InputWidget(controllers[index], hints[index]);
+  return inputWidget(controllers[index], hints[index]);
 });

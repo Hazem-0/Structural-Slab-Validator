@@ -38,7 +38,7 @@ class SSVScreen extends StatelessWidget {
                 SizedBox(
                   width: constraints.maxWidth * 0.8,
                   child: Consumer(builder: (context, ref, child) {
-                    return ValidatorButton();
+                    return validatorButton();
                   }),
                 ),
               ],
