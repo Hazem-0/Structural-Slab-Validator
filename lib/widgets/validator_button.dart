@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:structural_slab_validator/providers/input_controller.dart';
+import 'package:structural_slab_validator/providers/validation.dart';
 import 'package:structural_slab_validator/theme/app_colors.dart';
 import 'package:structural_slab_validator/widgets/input_widget.dart';
 
@@ -17,6 +18,7 @@ Widget validatorButton() {
             return double.parse(controller.text);
           }).toList();
           inputState.update(values: values);
+          ref.read(validationProvider.notifier).displayOutput();
         } catch (e) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
