@@ -1,31 +1,25 @@
+import 'package:structural_slab_validator/models/slab_type.dart';
+
 class OutputData {
-  final double reinforcementRatio;
-  final double effectiveDepth;
-  final double? steelArea;
-  final double? barDiameter;
-  final int? numberOfBars;
+  final SlabType slabType;
+  final double thickness;
+  final double steelArea;
 
   OutputData({
-    required this.reinforcementRatio,
-    required this.effectiveDepth,
-    this.steelArea,
-    this.barDiameter,
-    this.numberOfBars,
+    required this.slabType,
+    required this.thickness,
+    required this.steelArea,
   });
 
   OutputData copyWith({
-    double? reinforcementRatio,
-    double? effectiveDepth,
+    SlabType? slabType,
+    double? thickness,
     double? steelArea,
-    double? barDiameter,
-    int? numberOfBars,
   }) {
     return OutputData(
-      reinforcementRatio: reinforcementRatio ?? this.reinforcementRatio,
-      effectiveDepth: effectiveDepth ?? this.effectiveDepth,
+      slabType: slabType ?? this.slabType,
+      thickness: thickness ?? this.thickness,
       steelArea: steelArea ?? this.steelArea,
-      barDiameter: barDiameter ?? this.barDiameter,
-      numberOfBars: numberOfBars ?? this.numberOfBars,
     );
   }
 }
