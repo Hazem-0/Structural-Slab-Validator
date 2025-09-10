@@ -20,47 +20,47 @@ class SSVScreen extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
-            child: Consumer(
-              builder: (context ,ref , child) {
-                final validator = ref.watch(validationProvider);
-                return Column(
-                  children: [
-                    GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      padding: const EdgeInsets.all(10),
-                      itemCount: 8,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: constraints.maxWidth > 600 ? 3 : 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 5,
-                        childAspectRatio: constraints.maxWidth > 600 ? 4 : 3,
-                      ),
-                      itemBuilder: (context, index) => Container(
-                        child: textFields[index],
-                      ),
+            child: Consumer(builder: (context, ref, child) {
+              final validator = ref.watch(validationProvider);
+              return Column(
+                children: [
+                  GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(10),
+                    itemCount: 8,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: constraints.maxWidth > 600 ? 3 : 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 5,
+                      childAspectRatio: constraints.maxWidth > 600 ? 4 : 3,
                     ),
-                    SizedBox(
-                      width: constraints.maxWidth * 0.8,
-                      child: Consumer(builder: (context, ref, child) {
-                        return validatorButton();
-                      }),
+                    itemBuilder: (context, index) => Container(
+                      child: textFields[index],
                     ),
-                    SizedBox(
-                      height: constraints.maxHeight * 0.05,
-                    ),
-                   (validator!=null)? SizedBox(
-                      width: constraints.maxWidth * 0.9,
-                      height: constraints.maxHeight * 0.4,
-                      child: const OutputCard(),
-                    ):const SizedBox(),
-                    SizedBox(
-                      height: constraints.maxHeight * 0.05,
-                    ),
-                  ],
-                );
-              }
-            ),
+                  ),
+                  SizedBox(
+                    width: constraints.maxWidth * 0.8,
+                    child: Consumer(builder: (context, ref, child) {
+                      return validatorButton();
+                    }),
+                  ),
+                  SizedBox(
+                    height: constraints.maxHeight * 0.05,
+                  ),
+                  (validator != null)
+                      ? SizedBox(
+                          width: constraints.maxWidth * 0.9,
+                          height: constraints.maxHeight * 0.4,
+                          child: const OutputCard(),
+                        )
+                      : const SizedBox(),
+                  SizedBox(
+                    height: constraints.maxHeight * 0.05,
+                  ),
+                ],
+              );
+            }),
           );
         },
       ),

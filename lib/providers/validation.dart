@@ -132,7 +132,7 @@ class ValidationNotifier extends StateNotifier<OutputData?> {
   }
 
   void _steelReinforcementDesign() {
-    _steelArea = _steelArea; 
+    _steelArea = _steelArea;
   }
 }
 

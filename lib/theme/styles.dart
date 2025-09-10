@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'app_colors.dart';
 
@@ -41,5 +40,6 @@ class Styles {
         color: AppColors.surfaceLight,
         fontWeight: FontWeight.bold,
       );
-  static EdgeInsets get paddingLeft20Top10 => EdgeInsets.only(left: 20.w, top: 10.h);
+  static EdgeInsets get paddingLeft20Top10 =>
+      EdgeInsets.only(left: 20.w, top: 10.h);
 }

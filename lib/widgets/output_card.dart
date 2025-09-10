@@ -15,7 +15,7 @@ class OutputCard extends ConsumerWidget {
       alignment: Alignment.center,
       decoration: Styles.boxDecoration,
       child: GridView.count(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount:
