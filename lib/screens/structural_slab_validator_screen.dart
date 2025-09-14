@@ -4,6 +4,7 @@ import 'package:structural_slab_validator/providers/validation.dart';
 import 'package:structural_slab_validator/theme/app_colors.dart';
 import 'package:structural_slab_validator/widgets/input_widget.dart';
 import 'package:structural_slab_validator/widgets/output_card.dart';
+import 'package:structural_slab_validator/widgets/reset_button.dart';
 import 'package:structural_slab_validator/widgets/validator_button.dart';
 
 class SSVScreen extends StatelessWidget {
@@ -40,9 +41,18 @@ class SSVScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: constraints.maxWidth * 0.8,
+                    // width: constraints.maxWidth * 0.9,
                     child: Consumer(builder: (context, ref, child) {
-                      return validatorButton();
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          validatorButton(),
+                          SizedBox(
+                            width: constraints.maxWidth * 0.45,
+                            child: const ResetButton(),
+                          ),
+                        ],
+                      );
                     }),
                   ),
                   SizedBox(

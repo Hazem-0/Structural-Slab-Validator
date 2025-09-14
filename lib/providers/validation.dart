@@ -37,6 +37,10 @@ class ValidationNotifier extends StateNotifier<OutputData?> {
     );
   }
 
+  void reset() {
+    state = null;
+  }
+
   void _slapClassification() {
     final input = _ref.read(inputProvider);
     _r = (input.momentFactor! * input.longSpan!) /
