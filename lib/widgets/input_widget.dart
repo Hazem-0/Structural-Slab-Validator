@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:structural_slab_validator/theme/app_colors.dart';
+import 'package:structural_slab_validator/theme/styles.dart';
 
 Widget inputWidget(TextEditingController controller, String hint) {
   return TextField(
@@ -8,19 +9,10 @@ Widget inputWidget(TextEditingController controller, String hint) {
       label: Text(hint),
       filled: true,
       fillColor: AppColors.primaryLight,
-      labelStyle: const TextStyle(color: AppColors.primary),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: AppColors.borderDefault),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: AppColors.borderDefault),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: AppColors.borderFocused, width: 2),
-      ),
+      labelStyle: Styles.font14WhiteBold,
+      border: Styles.border,
+      enabledBorder: Styles.border,
+      focusedBorder: Styles.focusedBorder,
     ),
     keyboardType: const TextInputType.numberWithOptions(decimal: true),
   );
